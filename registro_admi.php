@@ -2,7 +2,7 @@
 <?php
 
 include("conn/connLocalhost.php");
-
+echo "se hizo";
 print_r($connLocalhost);
 
 if(isset($_POST['sent'])) {
