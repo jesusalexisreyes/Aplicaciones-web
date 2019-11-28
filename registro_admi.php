@@ -1,24 +1,22 @@
 
 <?php
-
 include("conn/connLocalhost.php");
-echo "se hizo";
-print_r($connLocalhost);
 
+include("includes/utils.php");
 if(isset($_POST['sent'])) {
 
   // Validacion de cajas vacias
   foreach ($_POST as $calzon => $caca) {
-    if($caca == "" && $calzon != "nombre") $error[] = "The field $calzon is required";
+    if($caca == "" && $calzon != "nombre") $error[] = "El campo $calzon es obligatorio";
   }
 
   // Validacion de password coincidentes
-  if($_POST['contraseña'] != $_POST['contraseña1']) $error[] = "The password doesn't match";
+  if($_POST['contraseña'] != $_POST['contraseña1']) $error[] = "La contraseña no coincide";
 
   // Validación de email existente
   // Primero determinamos que solo se ejecute la validación cuando tenemos la certeza de que se capturó un email
   if(isset($_POST['correo']) && isset($_POST['correo']) != "") {
-    $queryValidateEmail = sprintf("SELECT id FROM usuario WHERE email = '%s'",
+    $queryValidateEmail = sprintf("SELECT idUsuario FROM usuario WHERE correo = '%s'",
       mysqli_real_escape_string($connLocalhost, trim($_POST['correo']))
     );
 
@@ -27,14 +25,14 @@ if(isset($_POST['sent'])) {
 
     // Contamos cuantos registros fueron devueltos por la consulta anterior, si obtenemos un numero distinto de 0 quiere decir que el correo ya está siendo utilizado
     if(mysqli_num_rows($resQueryValidateEmail) != 0) {
-      $error[] = "The email is already in use...";
+      $error[] = "El correo esta ocupado";
     }
   }
 
   // Inserción del nuevo usuario en la base de datos, solamente se ejecutará cuando NO EXISTAN ERRORES
   if(!isset($error)) {
     // Definimos el query a ejecutar
-    $queryUserAdd = sprintf("INSERT INTO usuario (nivel, nombre, correo, contraseña, Direccion) VALUES ( '%s', '%s', '%s', '%s', '%s')",
+    $queryUserAdd = sprintf("INSERT INTO usuario (nivel, nombre, correo, contraseña, direccion) VALUES ( '%s', '%s', '%s', '%s', '%s')",
         mysqli_real_escape_string($connLocalhost,trim($_POST['nivel'])),
         mysqli_real_escape_string($connLocalhost,trim($_POST['nombre'])),
         mysqli_real_escape_string($connLocalhost,trim($_POST['correo'])),
@@ -48,7 +46,7 @@ if(isset($_POST['sent'])) {
 
     // Redireccionamos al usuario si todo salio bien
     if($resQueryUserAdd) {
-      echo "se agrego ala base";
+
     }
   }
 
@@ -68,15 +66,15 @@ if(isset($_POST['sent'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Site Metas -->
-    <title>Markedia - Marketing Blog Template</title>
+    <title>Registro (Administrador)</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<!--    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
+-->
     <!-- Design fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
 
@@ -112,13 +110,32 @@ if(isset($_POST['sent'])) {
      <div class="newsletter-widget text-center align-self-center">
                             <h3>Registro Administrador</h3>
 
+
+
+                            <?php
+                              if(isset($error)) { ?>
+                                  <div style="background: #F5A9A9;"class="alert alert-warning alert-dismissable">
+<?php
+                              printMsg($error, "error");
+                            echo "  </div>";}
+
+                            ?>
+
+                            <?php if(isset($resQueryUserAdd)){
+                             ?>
+                             <div class="alert alert-success alert-dismissible fade show">
+                                <strong>Success!</strong> Your message has been sent successfully.
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            </div>
+                            <?php } ?>
+
                             <form class="form-inline" method="post">
-                                <input type="text" name="correo" placeholder="Coloca tu correo" required class="form-control" />
+                              <input type="email" name="correo" placeholder="Coloca tu correo" required class="form-control" />
 
                                  <input type="text" name="nombre" placeholder="Nombre completo" required class="form-control" />
 
-                                <input type="password" name="contraseña" placeholder="contraseña" requiered class="form-control" />
-                                <input type="password" name="contraseña1" placeholder="repite contraseña" requiered class="form-control" />
+                                 <input type="password" name="contraseña" placeholder="contraseña" requiered class="form-control" />
+                                 <input type="password" name="contraseña1" placeholder="repite contraseña" requiered class="form-control" />
 
                                  <input type="text" name="direccion" placeholder="Direccion" required class="form-control" />
 
@@ -129,7 +146,7 @@ if(isset($_POST['sent'])) {
                                     </select>
 
 
-                                <input type="submit" name="sent" value="Iniciar sesion" class="btn btn-default btn-block" />
+                                <input type="submit" name="sent" value="Registrar" class="btn btn-default " />
 
                             </form>
                         </div><!-- end newsletter -->

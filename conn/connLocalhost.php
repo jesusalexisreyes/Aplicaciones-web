@@ -3,9 +3,9 @@
 
 
 $server = "localhost";
-$bd = "proyectoalonsoweb";
-$user = "root";
-$pass = "";
+$bd = "proyectoalonso";
+$user = "usr";
+$pass = "1234";
 
 // Hacemos la conexión con la funcion de conexión de PHP
 $connLocalhost = mysqli_connect($server, $user, $pass) or trigger_error(mysqli_error(),E_USER_ERROR);
