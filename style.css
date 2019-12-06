@@ -9,7 +9,11 @@
 
 /**************************************
     Table of Content
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
     1. BASIC
     2. HEADER
     3. SECTION
@@ -19,7 +23,11 @@
     7. WIDGETS
 **************************************/
 
+<<<<<<< HEAD
+/* BASIC 
+=======
 /* BASIC
+>>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
 **************************************/
 
 body {
@@ -117,6 +125,8 @@ p {
 a {
     text-decoration: none !important;
 }
+<<<<<<< HEAD
+=======
 #registro-tabla{
 
   right: 102px; */
@@ -156,6 +166,7 @@ a {
 
 }
 
+>>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
 
 .blockquote {
     border: 1px solid #edeff2;
@@ -169,7 +180,11 @@ a {
 }
 
 
+<<<<<<< HEAD
+/* HEADER 
+=======
 /* HEADER
+>>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
 **************************************/
 
 .header {
@@ -738,7 +753,11 @@ div.tab button:hover {
 }
 
 
+<<<<<<< HEAD
+/* PAGES 
+=======
 /* PAGES
+>>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
 **************************************/
 
 .notfound h2 {
@@ -872,7 +891,11 @@ div.tab button:hover {
 }
 
 
+<<<<<<< HEAD
+/* BLOG 
+=======
 /* BLOG
+>>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
 **************************************/
 
 .carousel-indicators li {
@@ -1359,7 +1382,11 @@ hr.invis3 {
 }
 
 
+<<<<<<< HEAD
+/* WIDGETS 
+=======
 /* WIDGETS
+>>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
 **************************************/
 
 .sidebar .widget {
@@ -1712,4 +1739,8 @@ hr.invis3 {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
