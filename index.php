@@ -5,7 +5,7 @@
 
 if(!isset($_SESSION)) {
   session_start();
-//session_destroy();
+  session_destroy();
 
     if(isset($_SESSION['usuarioId'])) header('Location: index.php');
 
