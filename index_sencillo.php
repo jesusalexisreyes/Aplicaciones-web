@@ -1,6 +1,83 @@
 
 
 
+<?php
+
+// Iniciamos o retomamos la sesión
+
+if(!isset($_SESSION)) {
+  session_start();
+//session_destroy();
+
+    if(isset($_SESSION['usuarioId'])) header('Location: index.php');
+
+ }
+
+// Incluimos la conexión a la BD
+include("conn/connLocalhost.php");
+include("includes/utils.php");
+
+// Validamos que el formulario se haya enviado
+if(isset($_POST['sent'])) {
+  // validamos campos vacios
+  foreach ($_POST as $calzon => $caca) {
+    if($caca == "") $error[] = "The field $calzon is required";
+  }
+
+  // Continuamos con la validación siempre y cuando estemos libres de errores
+  if(!isset($error)) {
+    // Armamos la consulta con datos sanitizados
+    $queryLoginUser = sprintf("SELECT idUsuario, Nivel, Nombre, Correo,Direccion FROM usuario WHERE Correo = '%s' AND Contraseña = '%s'",
+        mysqli_real_escape_string($connLocalhost, trim($_POST['Correo'])),
+        mysqli_real_escape_string($connLocalhost, trim($_POST['Contraseña']))
+    );
+
+    // Ejecutamos el query
+    $resQueryLoginUser = mysqli_query($connLocalhost, $queryLoginUser) or trigger_error("The query for user validation has failed");
+
+    //Evaluamos el resultado, si es exitoso, creamos los indices de sesión
+    if(mysqli_num_rows($resQueryLoginUser)) {
+      // Hacemos un fetch del resultset
+      $userData = mysqli_fetch_assoc($resQueryLoginUser);
+
+      // Definimos los indices de sesión
+      $_SESSION['usuarioId'] = $userData['idUsuario'];
+        $_SESSION['usuarioNivel'] = $userData['Nivel'];
+          $_SESSION['usuarioNombre'] = $userData['Nombre'];
+      $_SESSION['usuarioCorreo'] = $userData['Correo'];
+        $_SESSION['usuarioCorreo'] = $userData['Contraseña'];
+      $_SESSION['UsuarioDireccion'] = $userData['Direccion'];
+
+      // Una vez definidos los indices de sesion realizamos una redirección hacia Control Panel
+
+if ($_SESSION['usuarioNivel']==1) {
+  header("Location: index_admin.php?login=true");
+}if ($_SESSION['usuarioNivel']==2) {
+  header("Location: index_usr.php?login=true");
+}if ($_SESSION['usuarioNivel']==3) {
+  header("Location: index_proveedor.php?login=true");
+}
+
+
+    }
+    else {
+      $error[] = "The credentials provided were incorrect... please try again!";
+    }
+
+  }
+
+}
+
+
+
+
+?>
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,45 +126,49 @@
     <!-- Version Marketing CSS for this template -->
     <link href="css/version/marketing.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+  <script type="text/javascript">
+  <!--
+  function MM_jumpMenuGo(objId,targ,restore){ //v9.0
+    var selObj = null;  with (document) {
+    if (getElementById) selObj = getElementById(objId);
+    if (selObj) eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+    if (restore) selObj.selectedIndex=0; }
+  }
+  //-->
+  </script>
 
 </head>
 <body>
 
     <div id="wrapper">
-        <header class="market-header header">
-            <div class="container-fluid">
-                <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="marketing-index.html"><img src="images/version/market-logo.png" alt=""></a>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-category.html">Marketing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-category.html">Make Money</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-blog.html">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="marketing-contact.html">Contact Us</a>
-                            </li>
-                        </ul>
+      <header class="market-header header">
+          <div class="container-fluid">
+              <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <a class="navbar-brand" href="marketing-index.html"><img src="images/version/market-logo.png" alt=""></a>
+                  <div class="collapse navbar-collapse" id="navbarCollapse">
+                      <ul class="navbar-nav mr-auto">
+                          <li class="nav-item">
+                              <a class="nav-link" href="marketing-index.html">Inicio</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="categoria.php">Categorias</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="marketing-category.html">Compras</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="marketing-contact.html">Contactanos</a>
+                          </li>
+                      </ul>
 
-                    </div>
-                </nav>
-            </div><!-- end container-fluid -->
-        </header><!-- end market-header -->
+                  </div>
+              </nav>
+          </div><!-- end container-fluid -->
+      </header><!-- end market-header -->
 
         <section id="cta" class="section">
             <div class="container">
@@ -100,12 +181,16 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="newsletter-widget text-center align-self-center">
                             <h3>Inicia sesion</h3>
+                            <?php
+                              if(isset($error)) printMsg($error, "error");
+                              if(isset($_GET['loggedOut'])) printMsg("You have logged out succesfully from the system.", "exito");
+                              if(isset($_GET['authError'])) printMsg("You are not authorized to access this content.", "error");
+                            ?>
+                            <form class="form-inline" method="post" action="index.php">
+                                <input type="text" name="Correo" placeholder="Coloca tu correo" value= "<?php if(isset($_POST['Correo'])) echo $_POST['Correo']; ?>" required class="form-control" />
+                                <input type="password" name="Contraseña" placeholder="contraseña" requiered class="form-control" />
 
-                            <form class="form-inline" method="post">
-                                <input type="text" name="email" placeholder="Coloca tu correo" required class="form-control" />
-                                <input type="password" name="password" placeholder="contraseña" requiered class="form-control" />
-
-                                <input type="submit" value="Iniciar sesion" class="btn btn-default btn-block" />
+                                <input type="submit" value="Iniciar sesion" name ="sent" class="btn btn-default btn-block" />
                                 <br>
                                 <p style ="fontfont-size: 10px;">En caso de no tener un cuenta cree una</p>
 
