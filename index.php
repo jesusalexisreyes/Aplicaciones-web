@@ -7,6 +7,8 @@ if(!isset($_SESSION)) {
   session_start();
   //session_destroy();
 
+if($_SESSION !=null) {
+
 if ($_SESSION['usuarioNivel']==1) {
   header("Location: index_admin.php?login=true");
 }if ($_SESSION['usuarioNivel']==2) {
@@ -14,7 +16,7 @@ if ($_SESSION['usuarioNivel']==1) {
 }if ($_SESSION['usuarioNivel']==3) {
   header("Location: index_proveedor.php?login=true");
 }
-
+}
  }
 
 // Incluimos la conexión a la BD
@@ -69,16 +71,10 @@ if ($_SESSION['usuarioNivel']==1) {
     }
 
   }
-
 }
 
 
-
-
 ?>
-
-
-
 
 
 
@@ -199,13 +195,23 @@ if ($_SESSION['usuarioNivel']==1) {
                                 <p style ="fontfont-size: 10px;">En caso de no tener un cuenta cree una</p>
 
                             </form>
-                            <a type="button" style ="background: #f9ca27 !important;"class="btn btn-warning" href="registro_usr.php" >Registrarse</a>
-                          <!--  <a type="button" style ="background: #9CDED5 !important;"class=" btn btn-primary" href="#" >Link</a> -->
+                            <a type="button" class="bottone_reg " href="registro_usr.php">
+                              Registrarme
+                            </a>                          <!--  <a type="button" style ="background: #9CDED5 !important;"class=" btn btn-primary" href="#" >Link</a> -->
                         </div><!-- end newsletter -->
                     </div>
                 </div>
             </div>
         </section>
+
+
+</div>
+
+
+
+
+
+
 
         <section class="section lb">
             <div class="container">

@@ -10,7 +10,7 @@
 /**************************************
     Table of Content
 <<<<<<< HEAD
-    
+
 =======
 
 >>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
@@ -24,7 +24,7 @@
 **************************************/
 
 <<<<<<< HEAD
-/* BASIC 
+/* BASIC
 =======
 /* BASIC
 >>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
@@ -181,7 +181,7 @@ a {
 
 
 <<<<<<< HEAD
-/* HEADER 
+/* HEADER
 =======
 /* HEADER
 >>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
@@ -754,7 +754,7 @@ div.tab button:hover {
 
 
 <<<<<<< HEAD
-/* PAGES 
+/* PAGES
 =======
 /* PAGES
 >>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
@@ -892,7 +892,7 @@ div.tab button:hover {
 
 
 <<<<<<< HEAD
-/* BLOG 
+/* BLOG
 =======
 /* BLOG
 >>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
@@ -1383,7 +1383,7 @@ hr.invis3 {
 
 
 <<<<<<< HEAD
-/* WIDGETS 
+/* WIDGETS
 =======
 /* WIDGETS
 >>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
@@ -1723,6 +1723,21 @@ hr.invis3 {
     position: fixed;
     display: block
 }
+
+.bottone_reg{
+  background-color: cornsilk; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+border-radius: 12px;
+
+}
+
+
 
 .preloader {
     position: absolute;

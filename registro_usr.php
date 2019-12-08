@@ -32,7 +32,7 @@ if(isset($_POST['sent'])) {
   // Inserción del nuevo usuario en la base de datos, solamente se ejecutará cuando NO EXISTAN ERRORES
   if(!isset($error)) {
     // Definimos el query a ejecutar
-    $queryUserAdd = sprintf("INSERT INTO usuario ( nombre, correo, contraseña, direccion) VALUES ( '%s', '%s', '%s', '%s')",
+    $queryUserAdd = sprintf("INSERT INTO usuario ( nivel, nombre, correo, contraseña, direccion) VALUES ( 2,'%s', '%s', '%s', '%s')",
 
         mysqli_real_escape_string($connLocalhost,trim($_POST['nombre'])),
         mysqli_real_escape_string($connLocalhost,trim($_POST['correo'])),
