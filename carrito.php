@@ -47,11 +47,11 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
+
 <body>
-
 <?php include("includes/header.php"); ?>
-
-
+    
 <div class="page-title db">
         <div class="container">
             <div class="row">
@@ -70,41 +70,62 @@
     </div><!-- end page-title -->
 
 
-    <section class="container mb-5 pt-5">
-        <div class="card-deck">
-            <div class="card ">
-                <img src="images/vestido_floreado.jpg" class="card-img-top img-fluid" alt="Modelo en blusa blanca">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Vestido floreado</h5>
-                     <p class="card-text ">Para todo tipo de eventos<br><strong>$999</strong></p>
-                     <a href="#" class="btn btn-primary mb-3">Comprar</a>
-                </div>
-             </div>
+    <br>
 
-             <div class="card ">
-                <img src="images/vestido_negro.jpg" class="card-img-top img-fluid" alt="...">
-                 <div class="card-body text-center">
-                    <h5 class="card-title">Vestido negro</h5>
-                    <p class="card-text">Perfecto para noches de gala.<br><strong>$1099</strong></p>
-                    <a href="#" class="btn btn-primary mb-3">Comprar</a>
-                </div>  
-            </div>
+    <h2>Items en el carrito</h2>
 
-            <div class="card ">
-                <img src="images/blusa_flores.jfif" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body text-center">
-                     <h5 class="card-title">Vestido rojo floreado</h5>
-                     <p class="card-text">Lista para tu cita.<br><strong>$1299</strong></p>
-                     <a href="#" class="btn btn-primary mb-3">Comprar</a>
-                </div>
-            </div>
-        </div><!-- fin del deck card-->
-    </section>
+   <table class = "table table-light table-bordered col-6">
+       <tbody>
+         <tr>
+            <th width= "40%">Descripcion</th>
+            <th width= "15%">Cantidad</th>
+            <th width= "20%">Precio</th>
+            <th width= "20%">Total</th>
+            <th width= "5%">--</th>
+       </tr>  
+       <tr>
+            <td width= "40%">Libro php</td>
+            <td width= "15%">1</td>
+            <td width= "20%">$300</td>
+            <td width= "20%">$200</td>
+            <td width= "5%"><button class= "btn btn-danger"type="button" >Eliminar</button></td> 
+       </tr>  
+       <tr>
+            <td width= "40%">Libro php</td>
+            <td width= "15%">1</td>
+            <td width= "20%">$300</td>
+            <td width= "20%">$200</td>
+            <td width= "5%"><button class= "btn btn-danger"type="button" >Eliminar</button></td> 
+       </tr>
+       </tbody>
+       
+   </table>
+
+
+<div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                            <div class="widget-no-style">
+                                <div class="newsletter-widget text-center align-self-center">
+                                    <h3>Subtotal:</h3>
+                                    <p>$2323</p>
+                                    <form class="form-inline" method="post">
+                                        <input type="text" name="email" placeholder="Add your email here.." required class="form-control" />
+                                        <input type="submit" value="Pagar" class="btn btn-default btn-block" />
+                                    </form>         
+                                </div><!-- end newsletter -->
+                            </div>
+
+
+
+
+
+
+
+
+
+
 </body>
 
-
-
-</html>
-   
-
-
+<html>
