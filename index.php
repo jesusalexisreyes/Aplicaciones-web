@@ -7,7 +7,13 @@ if(!isset($_SESSION)) {
   session_start();
   //session_destroy();
 
-    if(isset($_SESSION['usuarioId'])) header('Location: index.php');
+if ($_SESSION['usuarioNivel']==1) {
+  header("Location: index_admin.php?login=true");
+}if ($_SESSION['usuarioNivel']==2) {
+  header("Location: index_usr.php?login=true");
+}if ($_SESSION['usuarioNivel']==3) {
+  header("Location: index_proveedor.php?login=true");
+}
 
  }
 
