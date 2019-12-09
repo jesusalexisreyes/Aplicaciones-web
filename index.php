@@ -8,7 +8,7 @@ if(!isset($_SESSION)) {
 
     if(isset($_SESSION['usuarioId'])) header('Location: index.php');
 
- }
+}
 
 // Incluimos la conexión a la BD
 include("conn/connLocalhost.php");
@@ -216,48 +216,27 @@ if ($_SESSION['usuarioNivel']==1) {
 
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
-                            <h2 class="widget-title">Popular Posts</h2>
+                            <h2 class="widget-title">Publicaciones populares</h2>
                             <div class="blog-list-widget">
                                 <div class="list-group">
                                     <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 justify-content-between">
-                                            <img src="upload/small_01.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">Banana-chip chocolate cake recipe with customs</h5>
-                                            <span class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </span>
+                                            <img src="images/blusa2.jpg" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">Blusas mas chilas</h5>
                                         </div>
                                     </a>
 
                                     <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 justify-content-between">
-                                            <img src="upload/small_02.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">10 practical ways to choose organic vegetables</h5>
-                                            <span class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </span>
+                                            <img src="images/vestido.jpg" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">Vestidos chulos</h5>
                                         </div>
                                     </a>
 
                                     <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 last-item justify-content-between">
-                                            <img src="upload/small_03.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">We are making homemade ravioli, nice and good</h5>
-                                            <span class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </span>
+                                            <img src="images/zapatos.jpg" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">Zapatos chulos</h5>
                                         </div>
                                     </a>
                                 </div>
@@ -267,17 +246,9 @@ if ($_SESSION['usuarioNivel']==1) {
 
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
-                            <h2 class="widget-title">Popular Categories</h2>
+                            <h2 class="widget-title"></h2>
                             <div class="link-widget">
-                                <ul>
-                                    <li><a href="#">Marketing <span>(21)</span></a></li>
-                                    <li><a href="#">SEO Service <span>(15)</span></a></li>
-                                    <li><a href="#">Digital Agency <span>(31)</span></a></li>
-                                    <li><a href="#">Make Money <span>(22)</span></a></li>
-                                    <li><a href="#">Blogging <span>(66)</span></a></li>
-                                    <li><a href="#">Entertaintment <span>(11)</span></a></li>
-                                    <li><a href="#">Video Tuts <span>(87)</span></a></li>
-                                </ul>
+                                
                             </div><!-- end link-widget -->
                         </div><!-- end widget -->
                     </div><!-- end col -->
@@ -287,7 +258,7 @@ if ($_SESSION['usuarioNivel']==1) {
                     <div class="col-md-12 text-center">
                         <br>
                         <br>
-                        <div class="copyright">&copy; Markedia. Design: <a href="http://html.design">HTML Design</a>.</div>
+                        <!--<div class="copyright">&copy; Markedia. Design: <a href="http://html.design">HTML Design</a>.</div>-->
                     </div>
                 </div>
             </div><!-- end container -->
