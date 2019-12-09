@@ -183,7 +183,7 @@ if ($_SESSION['usuarioNivel']==1) {
                 <div class="row" >
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
-                            <h2 class="widget-title">Recent Posts</h2>
+                            <h2 class="widget-title">Post Recientes</h2>
                             <div class="blog-list-widget">
                                 <div class="list-group">
                                     <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -196,6 +196,7 @@ if ($_SESSION['usuarioNivel']==1) {
                                     <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 justify-content-between">
                                             <img src="images/vestido.jpg" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">5 vestidos mas usados</h5>
                                         </div>
                                     </a>
 
