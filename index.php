@@ -190,15 +190,12 @@ if ($_SESSION['usuarioNivel']==1) {
                                         <div class="w-100 justify-content-between">
                                             <img src="images/blisa.jpg" alt="" class="img-fluid float-left">
                                             <h5 class="mb-1">5 Blusas de temporada</h5>
-                                            <small>22/11/2019</small>
                                         </div>
                                     </a>
 
                                     <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 justify-content-between">
                                             <img src="images/vestido.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">5 vestidos mas usados</h5>
-                                            <small>22/11/2019</small>
                                         </div>
                                     </a>
 
@@ -206,7 +203,6 @@ if ($_SESSION['usuarioNivel']==1) {
                                         <div class="w-100 last-item justify-content-between">
                                             <img src="images/vestido.jpg" alt="" class="img-fluid float-left">
                                             <h5 class="mb-1">Renueva tu estilo</h5>
-                                            <small>22/11/2019</small>
                                         </div>
                                     </a>
                                 </div>
