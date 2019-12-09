@@ -11,8 +11,6 @@
     Table of Content
 <<<<<<< HEAD
 
-=======
-
 >>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
     1. BASIC
     2. HEADER
@@ -125,48 +123,6 @@ p {
 a {
     text-decoration: none !important;
 }
-<<<<<<< HEAD
-=======
-#registro-tabla{
-
-  right: 102px; */
-      position: absolute;
-      right: -o%;
-      /* float: right; */
-      /* margin: 5px; */
-      margin-left: 134px;
-
-
-
-}
-.tabla-usuarios{
-  position: absolute;
-  background: yellowgreen;
-  top: 28px;
-  height: 554px;
-  width: 804px;
-  /* position: relative; */
-  margin-right: 10px;
-  margin-left: 10px;
-  float: left;
-  border-radius: 11px
-}
-
-.contenido-arriba{
-  width: 95%;
-      top: 126px;
-      /* padding: 2rem 6px; */
-      height: 926px;
-      border-radius: 6px;
-      position: relative;
-      background: green;
-      margin-right: auto;
-      margin-left: auto;
-
-
-}
-
->>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
 
 .blockquote {
     border: 1px solid #edeff2;
@@ -754,8 +710,6 @@ div.tab button:hover {
 
 
 <<<<<<< HEAD
-/* PAGES
-=======
 /* PAGES
 >>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
 **************************************/
@@ -1754,8 +1708,4 @@ border-radius: 12px;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6

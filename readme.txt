@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> jorge
 Item name : Markedia
 Item designer : HTML.Design
 Item published on : http://html.design 
@@ -16,6 +19,7 @@ HTML.Design
 =======
 Proyecto de aplicaciones web se trata de una tienda una tienda una botique en linea
 >>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
+<<<<<<< HEAD
 =======
 al jorge le gusta la macana
 =======
@@ -23,3 +27,5 @@ Proyecto de aplicaciones web se trata de una tienda una tienda una botique en li
 asdasdadasd
 >>>>>>> ca39ce982cb61a315b24bbda2b62a6fa1d7d55cb
 >>>>>>> memo
+=======
+>>>>>>> jorge
