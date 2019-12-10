@@ -139,7 +139,7 @@
                                     <div class="blog-meta big-meta text-center">
                                         <div class="post-sharing">
                                         </div><!-- end post-sharing -->
-                                        <h4><a href="marketing-single.html" title="">Blusas</a></h4>
+                                        <h4><a href="blusa.php" title="">Blusas</a></h4>
                                         <p>Si quieres lucirte como es debido ante alguna salida con tus amigos, fiestas, reuniones o en los días cotidianos, busca alguna de nuestras blusas.</p>
                                      </div><!-- end meta -->
                                 </div><!-- end blog-box -->
@@ -167,7 +167,7 @@
 
                                 <div class="blog-box wow fadeIn">
                                     <div class="post-media">
-                                        <a href="marketing-single.html" title="">
+                                        <a href="vestidos.php" title="">
                                             <img src="https://www.diarioinformacion.com/elementosWeb/gestionCajas/MMP/Image/2019//vestidos-fiestas-1.jpg" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span></span>
@@ -177,7 +177,7 @@
                                     </div>
                                     <!-- end media -->
                                     <div class="blog-meta big-meta text-center">
-                                        <h4><a href="marketing-single.html" title="">Vestidos</a></h4>
+                                        <h4><a href="vestidos.php" title="">Vestidos</a></h4>
                                         <p>Un vestido nunca viene mal si se desea lucir bien, si te interesa encontrar algo para ti puedes intentar buscando en nuestro catalogo.</p>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
@@ -284,8 +284,8 @@
                                 <ul>
                                     <li><a href="#">Zapatos <span>(21)</span></a></li>
                                     <li><a href="#">Pantalones <span>(15)</span></a></li>
-                                    <li><a href="#">Blusas <span>(31)</span></a></li>
-                                    <li><a href="#">Vestidos <span>(22)</span></a></li>
+                                    <li><a href="blusa.php">Blusas <span>(31)</span></a></li>
+                                    <li><a href="vestidos.php">Vestidos <span>(22)</span></a></li>
                                 </ul>
                             </div><!-- end link-widget -->
                         </div><!-- end widget -->
