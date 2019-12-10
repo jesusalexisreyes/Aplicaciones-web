@@ -1,21 +1,22 @@
+
+
 <?php
 include("../conn/connLocalhost.php");
-
 $salida="";
 
 $query ="SELECT * FROM usuario";
 
 
   if(isset($_POST['consulta'])){
-
   $q= $connLocalhost->real_escape_string($_POST['consulta']);
-  $queery="SELECT idUsuario, Nivel, Nombre, Correo, Contraseña, Direccion FROM usuario
-  WHERE Nivel LIKE '%$q%'  OR Nombre LIKE '%$q%'  OR Correo LIKE '%$q%' OR Contraseña LIKE '%$q%'  OR Direccion LIKE '$q'";
+  $query="SELECT idUsuario, Nivel, Nombre, Correo, Contraseña, Direccion FROM usuario
+  WHERE Nivel LIKE '%$q%'  OR Nombre LIKE '%$q%'  OR Correo LIKE '%$q%' OR Contraseña LIKE '%$q%'  OR Direccion LIKE '%$q%'";
 }
 
 $resultado = $connLocalhost->query($query);
 
 if ($resultado->num_rows>0) {
+
   $salida.="<table id='table' class='tabla_datos table table-striped'>
                 <thead class='table-info'>
                 <tr>
@@ -25,12 +26,13 @@ if ($resultado->num_rows>0) {
                 <td>Correo</td>
                 <td>Contraseña</td>
                 <td>Direccion</td>
+                <td>Eliminar</td>
 
                 </tr>
                 </thead>
                 <tbtbody>";
                 while ($fila = $resultado->fetch_assoc()) {
-
+                  $idborrar = $fila['idUsuario'];
                   $salida.=
 
                       "<tr>
@@ -41,6 +43,9 @@ if ($resultado->num_rows>0) {
                         <td>".$fila['Correo']."</td>
                         <td>".$fila['Contraseña']."</td>
                         <td>".$fila['Direccion']."</td>
+                        
+                        <td>".'<a href="borrarUsuario.php?id=<?php echo $product_id; ?">Borrar</a>'."</td>
+
 <form method='post' >
 
                         </tr>

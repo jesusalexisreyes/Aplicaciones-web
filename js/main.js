@@ -5,7 +5,7 @@ $.ajax({
 url:'app/buscar.php',
 type:'POST',
 dataType:'html',
-data:{consulta:'consulta'},
+data:{consulta},
 })
 
 .done(function(respuesta){
@@ -18,7 +18,7 @@ console.log("error");
 
 }
 
-$(document).on('keyup','#caja_busqueda', function(){
+$(document).on('keyup','#sample_search', function(){
 var valor = $(this).val();
 if(valor != ""){
   buscar_datos(valor);

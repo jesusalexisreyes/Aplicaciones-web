@@ -1,16 +1,11 @@
 <section class="principal">
 <h1 style="text-align: center;">Base de datos de usuarios</h1>
 
-<div class="form-1-2">
-  <label for="caja_busqueda">Buscar: </label>
-  <input Type="text" name="caja_busqueda" id="caja_busqueda" style="top: 66px; position: absolute;"></input>
-
-
-</div>
+Busqueda: <input type="text" name="sample_search" id="sample_search" onkeyup="buscar_datos(this.value);">
 
 
 
-<div id="datos" class="table" style="position: absolute; top: 105px;">
+<div id="datos" class="table" style="position: absolute; top: 120px;">
 
 
 
@@ -20,4 +15,4 @@
 
 
 <script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" consulta = <?php echo $_POST['consulta'];  ?>src="../js/main.js"></script>
