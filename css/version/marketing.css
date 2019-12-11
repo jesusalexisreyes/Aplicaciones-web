@@ -364,3 +364,9 @@ a:focus,
     color: #111111 !important;
     background-color: #f9ca27 !important;
 }
+
+
+.icono { 
+ height: fit-content;
+ width: fit-content;
+}

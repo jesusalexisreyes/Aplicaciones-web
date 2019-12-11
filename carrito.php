@@ -41,6 +41,7 @@
 
     <!-- Version Marketing CSS for this template -->
     <link href="css/version/marketing.css" rel="stylesheet">
+    
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -72,9 +73,13 @@
 
     <br>
 
-    <h2>Items en el carrito</h2>
 
-   <table class = "table table-light table-bordered col-6">
+    <h2 class = "offset-3">Articulos en el carrito</h2>
+
+    <!--- Tabla donde aparaceran los articulos enviados al carritos--->
+    <div class="row justify-content-around">
+    <div class = "col-md-8 clearfix">
+   <table class = "table table-light table-bordered ">
        <tbody>
          <tr>
             <th width= "40%">Descripcion</th>
@@ -84,14 +89,14 @@
             <th width= "5%">--</th>
        </tr>  
        <tr>
-            <td width= "40%">Libro php</td>
+            <td width= "40%">Blusa 1</td>
             <td width= "15%">1</td>
             <td width= "20%">$300</td>
             <td width= "20%">$200</td>
             <td width= "5%"><button class= "btn btn-danger"type="button" >Eliminar</button></td> 
        </tr>  
        <tr>
-            <td width= "40%">Libro php</td>
+            <td width= "40%">Blusa 2</td>
             <td width= "15%">1</td>
             <td width= "20%">$300</td>
             <td width= "20%">$200</td>
@@ -100,27 +105,31 @@
        </tbody>
        
    </table>
+   </div>
+   <!--- Fin de la tabla --->
 
 
-<div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+           
+        
+            <div class = "clearfix ">
+                
                         <div class="sidebar">
                             <div class="widget-no-style">
                                 <div class="newsletter-widget text-center align-self-center">
-                                    <h3>Subtotal:</h3>
-                                    <p>$2323</p>
+                                    <h3>Total a pagar:</h3>
+                                    <h4>$2323</h4>
                                     <form class="form-inline" method="post">
-                                        <input type="text" name="email" placeholder="Add your email here.." required class="form-control" />
                                         <input type="submit" value="Pagar" class="btn btn-default btn-block" />
                                     </form>         
                                 </div><!-- end newsletter -->
-                            </div>
+                           </div>
+        
+                        </div>  
+                   </div>
+                </div>
 
-
-
-
-
+            
+</div>        
 
 
 
