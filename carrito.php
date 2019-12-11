@@ -80,6 +80,8 @@
     <div class="row justify-content-around">
     <div class = "col-md-8 clearfix">
    <table class = "table table-light table-bordered ">
+
+
        <tbody>
          <tr>
             <th width= "40%">Descripcion</th>
@@ -130,6 +132,8 @@
 
             
 </div>        
+
+   <!--- Fin de la tabla --->
 
 
 
