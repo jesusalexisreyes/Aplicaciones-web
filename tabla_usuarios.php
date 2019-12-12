@@ -10,7 +10,7 @@
 
 
 
-<div id="datos" class="table" style="position: absolute; top: 105px;">
+<div id="datos" class="table" style="position: relative; width: max-content;">
 
 
 

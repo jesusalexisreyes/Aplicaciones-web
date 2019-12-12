@@ -91,11 +91,11 @@ h6 {
 
 .section.lb {
     background-color: #f1f1f1;
+
 }
 
 #cta {
     margin-top: 4rem;
-    background: rgba(0, 0, 0, 0) url(../../upload/cta.jpg) no-repeat scroll center center / cover;
     padding: 8rem 0;
     position: relative;
 }

@@ -1,3 +1,11 @@
+
+<?php
+
+$idproducto=$_GET['idproducto'];
+
+
+ echo $idproducto; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +49,7 @@
 
     <!-- Version Marketing CSS for this template -->
     <link href="css/version/marketing.css" rel="stylesheet">
-    
+
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -52,7 +60,7 @@
 
 <body>
 <?php include("includes/header.php"); ?>
-    
+
 <div class="page-title db">
         <div class="container">
             <div class="row">
@@ -89,23 +97,23 @@
             <th width= "20%">Precio</th>
             <th width= "20%">Total</th>
             <th width= "5%">--</th>
-       </tr>  
+       </tr>
        <tr>
             <td width= "40%">Blusa 1</td>
             <td width= "15%">1</td>
             <td width= "20%">$300</td>
             <td width= "20%">$200</td>
-            <td width= "5%"><button class= "btn btn-danger"type="button" >Eliminar</button></td> 
-       </tr>  
+            <td width= "5%"><button class= "btn btn-danger"type="button" >Eliminar</button></td>
+       </tr>
        <tr>
             <td width= "40%">Blusa 2</td>
             <td width= "15%">1</td>
             <td width= "20%">$300</td>
             <td width= "20%">$200</td>
-            <td width= "5%"><button class= "btn btn-danger"type="button" >Eliminar</button></td> 
+            <td width= "5%"><button class= "btn btn-danger"type="button" >Eliminar</button></td>
        </tr>
        </tbody>
-       
+
    </table>
    </div>
    <!--- Fin de la tabla --->
@@ -122,13 +130,12 @@
                                     <h4>$2323</h4>
                                     <form class="form-inline" method="post">
                                         <input type="submit" value="Pagar" class="btn btn-default btn-block" />
-                                    </form>         
+                                    </form>
                                 </div><!-- end newsletter -->
-                           </div>
-        
-                        </div>  
-                   </div>
-                </div>
+       </div>
+                            </div>
+
+
 
             
 </div>        

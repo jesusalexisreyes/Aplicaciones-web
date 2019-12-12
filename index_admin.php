@@ -9,6 +9,10 @@ if(!isset($_SESSION)) {
 
 
   if(!isset($_SESSION['usuarioId'])) header('Location: index_admin.php?authError=true');
+  if ($_SESSION['usuarioNivel']==2)
+    header("Location: index_usr.php?login=true");
+    if ($_SESSION['usuarioNivel']==3)
+      header("Location: index_proveedor.php?login=true");
 }
 include("conn/connLocalhost.php");
 
@@ -172,9 +176,12 @@ if(isset($_POST['sent'])) {
 
 
 
-                    <div class="contenido-arriba">
+                    <div class="contenido-arriba" style="    position: absolute;
+    width: -webkit-fill-available;
+    height: 956px;
+    top: 125px;">
 
-    <div  id="registro-tabla">
+    <div  id="registro-tabla" style=" position: unset;">
         <div class="col-lg-4 col-md-12" >
 
 
@@ -183,61 +190,63 @@ if(isset($_POST['sent'])) {
 
 
 
-            <div class="newsletter-widget text-center align-self-center" style="    right: -773px;">
-
-
-                <h3 >Registro de usuarios</h3>
-
-
-
-
-                <?php
-                  if(isset($error)) { ?>
-                      <div style="background: #F5A9A9;"class="alert alert-warning alert-dismissable">
-<?php
-                  printMsg($error, "error");
-                echo "  </div>";}
-
-                ?>
-
-                <?php if(isset($resQueryUserAdd)){
-                 ?>
-                 <div class="alert alert-success alert-dismissible fade show">
-                    <strong>Success!</strong> Your message has been sent successfully.
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                <?php } ?>
-
-                <form class="form-inline" method="post">
-                  <input type="email" name="correo" placeholder="correo" required class="form-control" />
-
-                     <input type="text" name="nombre" placeholder="Nombre completo" required class="form-control" />
-
-                     <input type="password" name="contraseña" placeholder="contraseña" requiered class="form-control" />
-                     <input type="password" name="contraseña1" placeholder="repite contraseña" requiered class="form-control" />
-
-                     <input type="text" name="direccion" placeholder="Direccion" required class="form-control" />
-
-                    <select required class="form-control" name="nivel">
-                        <option  value=1>Administrador</option>
-                        <option value=2>Ditribuidor</option>
-                        <option value=3>Usuario</option>
-                        </select>
-
-
-                    <input type="submit" name="sent" value="Registrar" class="btn btn-default " />
-
-                </form>
-
-            </div><!-- end newsletter -->
+            <div class="tabla-usuarios">
+                  <?php include("tabla_usuarios.php"); ?>
+            </div>
                     </div>
 
 
+                                <div class="newsletter-widget text-center align-self-center" style="right: -903px; top: -367px;">
+
+
+                                    <h3 >Registro de usuarios</h3>
+
+
+
+
+                                    <?php
+                                      if(isset($error)) { ?>
+                                          <div style="background: #F5A9A9;"class="alert alert-warning alert-dismissable">
+                    <?php
+                                      printMsg($error, "error");
+                                    echo "  </div>";}
+
+                                    ?>
+
+                                    <?php if(isset($resQueryUserAdd)){
+                                     ?>
+                                     <div class="alert alert-success alert-dismissible fade show">
+                                        <strong>Success!</strong> Your message has been sent successfully.
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div>
+                                    <?php } ?>
+
+                                    <form class="form-inline" method="post">
+                                      <input type="email" name="correo" placeholder="correo" required class="form-control" />
+
+                                         <input type="text" name="nombre" placeholder="Nombre completo" required class="form-control" />
+
+                                         <input type="password" name="contraseña" placeholder="contraseña" requiered class="form-control" />
+                                         <input type="password" name="contraseña1" placeholder="repite contraseña" requiered class="form-control" />
+
+                                         <input type="text" name="direccion" placeholder="Direccion" required class="form-control" />
+
+                                        <select required class="form-control" name="nivel">
+                                            <option  value=1>Administrador</option>
+                                            <option value=2>Ditribuidor</option>
+                                            <option value=3>Usuario</option>
+                                            </select>
+
+
+                                        <input type="submit" name="sent" value="Registrar" class="btn btn-default " />
+
+                                    </form>
+
+                                </div><!-- end newsletter -->
 
                             </div>
-                            <div class="tabla-usuarios">
-                                  <?php include("tabla_usuarios.php"); ?>
-                            </div>
+
+
         </div>
 
 
