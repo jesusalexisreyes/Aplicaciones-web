@@ -138,30 +138,7 @@ if ($_SESSION['usuarioNivel']==1) {
 <body background="images\ima.jpg">
 
     <div id="wrapper">
-      <header class="market-header header">
-          <div class="container-fluid">
-              <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-                  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                  </button>
-
-                  <a class="navbar-brand" href="index.php"><img src="images/version/market-logo.png" alt=""></a>
-                  <div class="collapse navbar-collapse" id="navbarCollapse">
-                      <ul class="navbar-nav mr-auto">
-                          <li class="nav-item">
-                              <a class="nav-link" href="marketing-index.html">Inicio</a>
-                          </li>
-
-                          <li class="nav-item">
-                              <a class="nav-link" href="marketing-contact.html">Contactanos</a>
-                          </li>
-                      </ul>
-
-                  </div>
-              </nav>
-          </div><!-- end container-fluid -->
-      </header><!-- end market-header -->
-
+<?php include("includes/header_logout.php"); ?>
       <section id="cta" >
             <div class="container" >
                 <div class="row" >
@@ -195,90 +172,8 @@ if ($_SESSION['usuarioNivel']==1) {
             </div>
         </section>
 
+<?php include("includes/footer_logout.php"); ?>
 
-
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                        <div class="widget">
-                            <h2 class="widget-title">Publicaciones recientes</h2>
-                            <div class="blog-list-widget">
-                                <div class="list-group">
-                                    <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 justify-content-between">
-                                            <img src="images/blisa.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">5 Blusas de temporada</h5>
-                                        </div>
-                                    </a>
-
-                                    <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 justify-content-between">
-                                            <img src="images/vestido.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">5 vestidos mas usados</h5>
-                                        </div>
-                                    </a>
-
-                                    <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 last-item justify-content-between">
-                                            <img src="images/vestido.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">Renueva tu estilo</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div><!-- end blog-list -->
-                        </div><!-- end widget -->
-                    </div><!-- end col -->
-
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                        <div class="widget">
-                            <h2 class="widget-title">Publicaciones populares</h2>
-                            <div class="blog-list-widget">
-                                <div class="list-group">
-                                    <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 justify-content-between">
-                                            <img src="images/blusa2.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">Blusas mas chilas</h5>
-                                        </div>
-                                    </a>
-
-                                    <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 justify-content-between">
-                                            <img src="images/vestido.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">Vestidos chulos</h5>
-                                        </div>
-                                    </a>
-
-                                    <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 last-item justify-content-between">
-                                            <img src="images/zapatos.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">Zapatos chulos</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div><!-- end blog-list -->
-                        </div><!-- end widget -->
-                    </div><!-- end col -->
-
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                        <div class="widget">
-                            <h2 class="widget-title"></h2>
-                            <div class="link-widget">
-
-                            </div><!-- end link-widget -->
-                        </div><!-- end widget -->
-                    </div><!-- end col -->
-                </div><!-- end row -->
-
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <br>
-                        <br>
-                        <!--<div class="copyright">&copy; Markedia. Design: <a href="http://html.design">HTML Design</a>.</div>-->
-                    </div>
-                </div>
-            </div><!-- end container -->
-        </footer><!-- end footer -->
 
         <div class="dmtop">Scroll to Top</div>
 
