@@ -116,6 +116,18 @@ p {
     color: #5e5e5e;
 }
 
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 p {
     margin-bottom: 26px;
     font-size: 15px;
@@ -125,48 +137,15 @@ p {
 a {
     text-decoration: none !important;
 }
-<<<<<<< HEAD
-=======
-#registro-tabla{
 
-  right: 102px; */
-      position: absolute;
-      right: -o%;
-      /* float: right; */
-      /* margin: 5px; */
-      margin-left: 134px;
-
-
-
-}
-.tabla-usuarios{
-  position: absolute;
-  background: yellowgreen;
-  top: 28px;
-  height: 554px;
-  width: 804px;
-  /* position: relative; */
-  margin-right: 10px;
-  margin-left: 10px;
-  float: left;
-  border-radius: 11px
-}
-
-.contenido-arriba{
-  width: 95%;
-      top: 126px;
-      /* padding: 2rem 6px; */
-      height: 926px;
-      border-radius: 6px;
-      position: relative;
-      background: green;
-      margin-right: auto;
-      margin-left: auto;
-
-
-}
-
->>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
+img {
+	max-width: 480px;
+	width: 100%;
+	height: auto;
+    display: block;
+    margin:20px auto;
+	
+    }
 
 .blockquote {
     border: 1px solid #edeff2;
@@ -420,7 +399,6 @@ div.tab button.active {
 div.tab button:hover {
     border-top: 0;
 }
-
 
 /* Style the tab content */
 
@@ -852,7 +830,7 @@ div.tab button:hover {
 }
 
 .page-title {
-    padding: 3rem 0;
+    padding: 4rem 0;
     background-color: #edeff2;
 }
 
@@ -1582,6 +1560,7 @@ hr.invis3 {
     padding: 1.25rem 3rem;
     border-radius: 0 !important;
 }
+
 
 .top-search .btn:hover,
 .top-search .btn:focus,
