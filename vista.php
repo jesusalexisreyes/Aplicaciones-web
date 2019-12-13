@@ -121,12 +121,40 @@
 
 <br>
 <br>
+
+<br>
+
+<div class="comment-section mt-5">
+                        <h3>Comentarios</h3>
+                        <hr class="ml-0" />
+                        <div class="media pt-5">
+                            <div class="card mr-4">
+                                <img src="assets/images/comment-user1.png" alt="" class="card-img">
+                                <div class="card-img-overlay">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="row">
+                                    <div class="col text-left">
+                                        <h4>Maria</h4>
+                                    </div>
+                                    <div class="col text-right">
+                                        <p class="my-0">
+                                            <span>Agregado 11 Dic 2019</span> 
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class ="texto">
+                                    Gran blusa.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
      <div>
 
                         <div class="col-lg-12">
                             <form class="form-wrapper margen">
                                 <h4>Comentarios</h4>
-                                <input type="text" class="form-control" placeholder="Titulo del comentario (opcional)">
                                 <textarea class="form-control" placeholder="Comentario"></textarea>
                                 <button type="button" class="btn btn-primary mb-5">Comentar<i class="fa fa-envelope-open-o"></i></button>
                             </form>
