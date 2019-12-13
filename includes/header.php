@@ -9,17 +9,22 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="marketing-index.html">Inicio</a>
+                                <a class="nav-link" href="categoria.php">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="marketing-category.html">Categorias</a>
+                                <a class="nav-link" href="index.php">Iniciar sesión</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="marketing-category.html">Compras</a>
+                                <a class="nav-link" href="contacto.php">Contactanos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="marketing-contact.html">Contactanos</a>
+                                <a class="nav-link" href=""><img src="images/" alt=""></a>
                             </li>
+                            <!----<li class="nav-item">
+                                <a  href="carrito.php" class= "icono" >
+                                    <img class= "img-fluid " src="images/carrito.png" alt="Imagen de carrito">
+                                </a>
+                                </li>--->
                         </ul>
                         <form class="form-inline" style=" position: absolute; top: 33px; left: 1000px;">
                       <a class="btn btn-outline-success" href="log_out.php" >Cerrar sesion</a>

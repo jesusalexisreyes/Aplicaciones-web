@@ -91,10 +91,15 @@ $idproducto=$_GET['idproducto'];
 
     <br>
 
-    <h2>Items en el carrito</h2>
+
+    <h2 class = "offset-3">Articulos en el carrito</h2>
 
     <!--- Tabla donde aparaceran los articulos enviados al carritos--->
-   <table class = "table table-light table-bordered col-6">
+    <div class="row justify-content-around">
+    <div class = "col-md-8 clearfix">
+   <table class = "table table-light table-bordered ">
+
+
        <tbody>
          <tr>
             <th width= "40%">Descripcion</th>
@@ -120,28 +125,31 @@ $idproducto=$_GET['idproducto'];
        </tbody>
 
    </table>
+   </div>
    <!--- Fin de la tabla --->
 
 
-<div class="container ">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        
+            <div class = "clearfix ">
+                
                         <div class="sidebar">
                             <div class="widget-no-style">
                                 <div class="newsletter-widget text-center align-self-center">
-                                    <h3>Subtotal:</h3>
-                                    <p>$2323</p>
+                                    <h3>Total a pagar:</h3>
+                                    <h4>$2323</h4>
                                     <form class="form-inline" method="post">
-                                        <input type="text" name="email" placeholder="Add your email here.." required class="form-control" />
-                                        <input type="submit" value="Pagar" class="btn btn-default btn-block" />
+                                        <button type="submit" value="Pagar" class="btn btn-default btn-block" />Pagar</btn>
                                     </form>
                                 </div><!-- end newsletter -->
+       </div>
                             </div>
 
 
 
+            
+</div>        
 
-
+   <!--- Fin de la tabla --->
 
 
 

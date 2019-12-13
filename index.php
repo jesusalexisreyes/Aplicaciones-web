@@ -6,7 +6,7 @@ if(!isset($_SESSION)) {
   session_start();
   //session_destroy();
 
-if($_SESSION !=null) {
+ if($_SESSION !=null) {
 
 
 if ($_SESSION['usuarioNivel']==1) {

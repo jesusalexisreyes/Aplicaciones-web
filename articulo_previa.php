@@ -63,12 +63,13 @@
     <div class="col-md-6 col-sm-12">
       
       <!-- There's only One image -->
+      <div class="">
       <div class="col-sm-12">
         <div class="main-product-image">
           <img src="images/blusa_blanca_08.jpg" alt="Blusa blanca ">
         </div>
       </div>
-      
+      </div>
     </div>
 
     <div class="col-md-6 col-sm-12">
@@ -80,6 +81,7 @@
 
           
             <!-- Product Price  -->
+            <div class="clearfix">
             <div class="form-group">
               <label class="col-sm-3 col-md-3 control-label">Precio:</label>
               <div class="col-sm-8 col-md-9">
@@ -112,6 +114,7 @@
             <div class="form-group product-stock">
               <div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-3">
                 <input type="submit" class="btn btn-primary" value="Agregar al Carro de Compras" />
+                <br>
                 <a href="·#" class="btn btn-link" title="Continúa Comprando">← Continúa Comprando</a>
               </div>
             </div>
@@ -127,7 +130,7 @@
 <p>De fibra creado con los mejores materiales</p>
               </div>
             </div>
-
+            </div>
 
             
 

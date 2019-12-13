@@ -75,27 +75,27 @@
             <div class="card ">
                 <img src="images/vestido_floreado.jpg" class="card-img-top img-fluid" alt="Modelo en blusa blanca">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Blusa blanca</h5>
-                     <p class="card-text ">Blusa comoda de todos los tamaños.<br><strong>$399</strong></p>
-                     <a href="#" class="btn btn-primary mb-3">Vista rapida</a>
+                    <h5 class="card-title">Vestido floreado</h5>
+                     <p class="card-text ">Para todo tipo de eventos<br><strong>$999</strong></p>
+                     <a href="#" class="btn btn-primary mb-3">Comprar</a>
                 </div>
              </div>
 
              <div class="card ">
                 <img src="images/vestido_negro.jpg" class="card-img-top img-fluid" alt="...">
                  <div class="card-body text-center">
-                    <h5 class="card-title">Blusa escolar</h5>
-                    <p class="card-text">Perfecta para la escuela.<br><strong>$499</strong></p>
-                    <a href="#" class="btn btn-primary mb-3">Vista rapida</a>
+                    <h5 class="card-title">Vestido negro</h5>
+                    <p class="card-text">Perfecto para noches de gala.<br><strong>$1099</strong></p>
+                    <a href="#" class="btn btn-primary mb-3">Comprar</a>
                 </div>  
             </div>
 
             <div class="card ">
                 <img src="images/blusa_flores.jfif" class="card-img-top img-fluid" alt="...">
                     <div class="card-body text-center">
-                     <h5 class="card-title">Hombro descubierto</h5>
-                     <p class="card-text">Lista para tu cita.<br><strong>$599</strong></p>
-                     <a href="#" class="btn btn-primary mb-3">Vista rapida</a>
+                     <h5 class="card-title">Vestido rojo floreado</h5>
+                     <p class="card-text">Lista para tu cita.<br><strong>$1299</strong></p>
+                     <a href="#" class="btn btn-primary mb-3">Comprar</a>
                 </div>
             </div>
         </div><!-- fin del deck card-->

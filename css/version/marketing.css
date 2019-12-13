@@ -7,6 +7,22 @@
 
 **************************************/
 
+
+
+.texto{
+    word-break: break-all;
+}
+
+.orden{
+    width: 250px;
+    display: flex;
+    align-items: center;
+}
+
+.borde {
+    background-color: #333333;
+}
+
 body {
     font-size: 15px;
     line-height: 26px;
@@ -363,4 +379,10 @@ a:focus,
 .bg-inverse {
     color: #111111 !important;
     background-color: #f9ca27 !important;
+}
+
+
+.icono { 
+ height: fit-content;
+ width: fit-content;
 }
