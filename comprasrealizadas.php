@@ -132,7 +132,7 @@ function eliminar()
                 <div class="col-lg-4 col-md-12">
 
 
-                    <div class="tabla-usuarios">
+                    <div class="tabla-ventas">
                         <?php include("tabla_ventas.php"); ?>
                     </div>
                 </div>
