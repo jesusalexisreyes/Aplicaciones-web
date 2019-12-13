@@ -115,6 +115,10 @@ function eliminar()
                             <li class="nav-item">
                                 <a class="nav-link" href="index_admin.php">Usuarios</a>
                             </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="productos.php">Productos</a>
+                            </li>
                         </ul>
                         <form class="form-inline" style=" position: absolute; top: 33px; left: 1298px;">
                             <a class="btn btn-outline-success" href="log_out.php">Cerrar sesion</a>
@@ -132,7 +136,7 @@ function eliminar()
                 <div class="col-lg-4 col-md-12">
 
 
-                    <div class="tabla-ventas">
+                    <div class="tabla-usuarios">
                         <?php include("tabla_ventas.php"); ?>
                     </div>
                 </div>
