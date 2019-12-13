@@ -11,13 +11,13 @@ include("includes/utils.php");
 $queryGetUsers = "SELECT idproducto, Imagen, Titulo, Precio, Categoria, Stock FROM producto WHERE Categoria =".$categoria;
 
 // Ejecutamos el query
-$resQueryGetUsers = mysqli_query($connLocalhost, $queryGetUsers) or trigger_error("There was an error getting the user data... please try again");
+$resQueryProducto = mysqli_query($connLocalhost, $queryGetUsers) or trigger_error("There was an error getting the user data... please try again");
 
 // Contamos el número de resultados obtenidos
-$totalUsers = mysqli_num_rows($resQueryGetUsers);
+$totalProductos = mysqli_num_rows($resQueryProducto);
 
 // Hacemos fetch del primer resultado
-$userDetails = mysqli_fetch_assoc($resQueryGetUsers);
+$productoDetalles = mysqli_fetch_assoc($resQueryProducto);
 
 
 
@@ -104,16 +104,15 @@ $userDetails = mysqli_fetch_assoc($resQueryGetUsers);
             <div class="container">
                 <div class="row">
 
-<?php echo  $categoria; ?>
 
 <ul class="listadoUsuarios">
   <?php do { ?>
   <li>
-    <p class="nombreUsuario"><?php echo $userDetails['Titulo'].' $'.$userDetails['Precio'] ?></p>
-    <img src="<?php echo $userDetails['Imagen'] ?>" width="210" height="240" alt="">
-    <p class="accionesUsuario"><a href="carrito.php?idproducto=<?php echo $userDetails['idproducto'];?>">Comprar</a> </p>
+    <p class="nombreUsuario"><?php echo $productoDetalles['Titulo'].' $'.$productoDetalles['Precio'] ?></p>
+    <img src="<?php echo $productoDetalles['Imagen'] ?>" width="210" height="240" alt="">
+    <p class="accionesUsuario"><a href="carrito.php?idproducto=<?php echo $productoDetalles['idproducto'];?>">Comprar</a> </p>
   </li>
-  <?php } while($userDetails = mysqli_fetch_assoc($resQueryGetUsers)); ?>
+  <?php } while($productoDetalles = mysqli_fetch_assoc($resQueryProducto)); ?>
 </ul>
 
 

@@ -1,6 +1,16 @@
 
 <?php
 
+
+if(!isset($_SESSION)) {
+  session_start();
+
+
+}
+
+$_SESSION['usuarioNivel'];
+
+
 $idproducto=$_GET['idproducto'];
 
 

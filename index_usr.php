@@ -11,8 +11,7 @@ if(!isset($_SESSION['usuarioId'])) header('Location: index_usr.php?authError=tru
 
 if ($_SESSION['usuarioNivel']==1)
   header("Location: index_admin.php?login=true");
-  if ($_SESSION['usuarioNivel']==3) 
-    header("Location: index_admin.php?login=true");
+
 }
 include("conn/connLocalhost.php");
 

@@ -42,7 +42,7 @@ if(isset($_POST['sent'])) {
     );
 
     // Ejecutamos el query y cachamos el resultado
-    $resQueryUserAdd = mysqli_query($connLocalhost, $queryUserAdd) or trigger_error("The user insert query failed...");
+    $resQueryUserAdd = mysqli_query($connLocalhost, $queryUserAdd) or trigger_error("Error en el registro :()");
 
     // Redireccionamos al usuario si todo salio bien
     if($resQueryUserAdd) {
@@ -107,7 +107,15 @@ if(isset($_POST['sent'])) {
 </head>
 <body>
    <div>
-     <div class="newsletter-widget text-center align-self-center">
+
+<div id="wrapper">
+
+     <?php include("includes/header_logout.php"); ?>
+
+
+
+
+     <div class="newsletter-widget text-center align-self-center" style="padding: 231px;">
                             <h3>Registro </h3>
 
 
@@ -124,7 +132,7 @@ if(isset($_POST['sent'])) {
                             <?php if(isset($resQueryUserAdd)){
                              ?>
                              <div class="alert alert-success alert-dismissible fade show">
-                                <strong>Success!</strong> Your message has been sent successfully.
+                                <strong>Success!</strong> Fecicidades se ha registrado!.
                                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                             </div>
                             <?php } ?>
@@ -148,7 +156,6 @@ if(isset($_POST['sent'])) {
                         </div><!-- end newsletter -->
                     </div>
 
-        <div class="dmtop">Scroll to Top</div>
 
 
 

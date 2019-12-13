@@ -14,7 +14,7 @@ if ($_SESSION['usuarioNivel']==1) {
 }if ($_SESSION['usuarioNivel']==2) {
   header("Location: index_usr.php?login=true");
 }if ($_SESSION['usuarioNivel']==3) {
-  header("Location: index_proveedor.php?login=true");
+  header("Location: index_usr.php?login=true");
 }
 }
  }
@@ -27,7 +27,7 @@ include("includes/utils.php");
 if(isset($_POST['sent'])) {
   // validamos campos vacios
   foreach ($_POST as $calzon => $caca) {
-    if($caca == "") $error[] = "The field $calzon is required";
+    if($caca == "") $error[] = "El campo $calzon es necesario";
   }
 
   // Continuamos con la validación siempre y cuando estemos libres de errores
@@ -39,7 +39,7 @@ if(isset($_POST['sent'])) {
     );
 
     // Ejecutamos el query
-    $resQueryLoginUser = mysqli_query($connLocalhost, $queryLoginUser) or trigger_error("The query for user validation has failed");
+    $resQueryLoginUser = mysqli_query($connLocalhost, $queryLoginUser) or trigger_error("Algo esta fallando");
 
     //Evaluamos el resultado, si es exitoso, creamos los indices de sesión
     if(mysqli_num_rows($resQueryLoginUser)) {
@@ -61,13 +61,13 @@ if ($_SESSION['usuarioNivel']==1) {
 }if ($_SESSION['usuarioNivel']==2) {
   header("Location: index_usr.php?login=true");
 }if ($_SESSION['usuarioNivel']==3) {
-  header("Location: index_proveedor.php?login=true");
+  header("Location: index_usr.php?login=true");
 }
 
 
     }
     else {
-      $error[] = "The credentials provided were incorrect... please try again!";
+      $error[] = "Las credenciales son incorrectas..... intentelo de nuevo!";
     }
 
   }
@@ -152,7 +152,7 @@ if ($_SESSION['usuarioNivel']==1) {
                             <?php
                               if(isset($error)) printMsg($error, "error");
                               if(isset($_GET['loggedOut'])) printMsg("You have logged out succesfully from the system.", "exito");
-                              if(isset($_GET['authError'])) printMsg("You are not authorized to access this content.", "error");
+                              if(isset($_GET['authError'])) printMsg("No tiene persmiso para estar aqui.", "error");
                             ?>
                             <form class="form-inline" method="post" action="index.php">
                                 <input type="text" name="Correo" placeholder="Coloca tu correo" value= "<?php if(isset($_POST['Correo'])) echo $_POST['Correo']; ?>" required class="form-control" />

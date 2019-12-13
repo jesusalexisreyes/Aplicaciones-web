@@ -12,7 +12,7 @@ if(!isset($_SESSION)) {
   if ($_SESSION['usuarioNivel']==2)
     header("Location: index_usr.php?login=true");
     if ($_SESSION['usuarioNivel']==3)
-      header("Location: index_proveedor.php?login=true");
+      header("Location: index_usr.php?login=true");
 }
 include("conn/connLocalhost.php");
 
