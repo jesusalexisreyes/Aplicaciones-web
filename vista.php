@@ -1,3 +1,38 @@
+<?php
+
+$idproducto=1;
+$idproductof=1;
+
+
+
+include("conn/connLocalhost.php");
+include("includes/utils.php");
+
+// Obtenemos los datos de los usuarios de la BD
+$queryGetComents = "SELECT descripcion, fecha, idUsuario FROM comentario WHERE idproducto =".$idproducto;
+$queryGetUsers = "SELECT idproducto, Imagen, Titulo, Precio, Categoria, Stock, Descripcion FROM producto WHERE idproducto =".$idproductof;
+
+// Ejecutamos el query
+$resQueryGetComments = mysqli_query($connLocalhost, $queryGetComents) or trigger_error("There was an error getting the user data... please try again");
+$resQueryGetUsers = mysqli_query($connLocalhost, $queryGetUsers) or trigger_error("There was an error getting the user data... please try again");
+
+// Contamos el número de resultados obtenidos
+$totalComments = mysqli_num_rows($resQueryGetComments);
+$totalUsers = mysqli_num_rows($resQueryGetUsers);
+// Hacemos fetch del primer resultado
+$commentsDetails = mysqli_fetch_assoc($resQueryGetComments);
+$userDetails = mysqli_fetch_assoc($resQueryGetUsers);
+
+
+
+
+
+ ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,22 +108,24 @@
 
 <div class ="row justify-content-around">
     <div class= "col-4 ">
+
+    <?php do { ?>
+
+
               
-                <img class= "m-5  clearfix " src="images/blusa_botones_7.jpg" width= "330px" alt="Blusa con botones">
+                <img class= "m-5  clearfix " src=<?php echo $userDetails['Imagen']?> width= "330px" alt="Blusa con botones">
                
        </div>        
     <div class= "col-4 " >
      
-        <h1 class= "text-center">Blusa bella<h1>
+        <h1 class= "text-center"><?php echo $userDetails ['Titulo']?><h1>
         <h4 class= >Descripción: </h4>
 
-        <p  class= " texto "> fdssssssssssssssssssssssssssssssssssssssssssssssfdsssssssssssssssssssssssssssssssssssssssssssssfdsssssssssssssssssssssssssssssssssssssssssssssfdsssssssssssssssssssssssssssssssssssssssssssssfdsssssssssssssssssssssssssssssssssssssssssssss</p>
+        <p  class= " texto "><?php echo $userDetails ['Descripcion']?></p>
       
 
-        <h4>Cantidad en stock:<h4>
-              <div class="col-sm-8 col-md-9">
-                <input type="text" class="form-control" id="input-qty" name="qty" maxlength="5" value="1">
-              </div>
+        <h4>Cantidad en stock:<?php echo $userDetails ['Stock']?><h4>
+              
             </div>
       
         
@@ -103,7 +140,9 @@
                     <div class="widget-no-style">
                         <div class="newsletter-widget text-center align-self-center">
                             <h3>Precio:</h3>
-                            <h4>$1999</h4>
+                            <h4><?php echo "$".$userDetails['Precio']?></h4>
+
+                            <?php } while($usersDetails = mysqli_fetch_assoc($resQueryGetUsers)); ?>
                             <form class="form-inline" method="post">
                                 
                                 <button class= "btn btn-primary" >Pagar</button>
@@ -133,24 +172,28 @@
                                 <div class="card-img-overlay">
                                 </div>
                             </div>
+
+
+                            <?php do { ?>
                             <div class="media-body">
                                 <div class="row">
                                     <div class="col text-left">
-                                        <h4>Maria</h4>
+                                        <h4><?php echo $commentsDetails['idUsuario']?></h4>
                                     </div>
                                     <div class="col text-right">
                                         <p class="my-0">
-                                            <span>Agregado 11 Dic 2019</span> 
+                                            <span><?php echo $commentsDetails['fecha']?> </span> 
                                         </p>
                                     </div>
                                 </div>
                                 <p class ="texto">
-                                    Gran blusa.
+                                <?php echo $commentsDetails['descripcion']?>
                                 </p>
                                 </div>
                             </div>
                         </div>
-     <div>
+                     <div>
+                     <?php } while($commentsDetails = mysqli_fetch_assoc($resQueryGetComments)); ?>
 
                         <div class="col-lg-12">
                             <form class="form-wrapper margen">

@@ -38,7 +38,7 @@ $userDetails = mysqli_fetch_assoc($resQueryGetUsers);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Site Metas -->
-    <title>Categoria</title>
+    <title>Producto</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -109,7 +109,7 @@ $userDetails = mysqli_fetch_assoc($resQueryGetUsers);
   <div class="card margen"  >                   
                     <img src="<?php echo $userDetails['Imagen'] ?>" width="210" height="240" alt="">
                         <div class="card-body text-center">
-                            <h5 class="card-title"><?php echo $userDetails ['Titulo']?></h5>
+                            <h5 class="card-title"><?php echo $userDetails['Titulo']?></h5>
                                 <p class="card-text"><strong><?php echo "Precio: $". $userDetails['Precio'] ?></strong></p>
                                 <a href="carrito.php?idproducto=<?php echo $userDetails['idproducto'];?>" class="btn btn-primary mb-3">Comprar</a>
                         </div>
