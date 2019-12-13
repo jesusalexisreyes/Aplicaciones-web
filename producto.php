@@ -107,11 +107,14 @@ $productoDetalles = mysqli_fetch_assoc($resQueryProducto);
 
 <ul class="listadoUsuarios">
   <?php do { ?>
-  <li>
-    <p class="nombreUsuario"><?php echo $productoDetalles['Titulo'].' $'.$productoDetalles['Precio'] ?></p>
-    <img src="<?php echo $productoDetalles['Imagen'] ?>" width="210" height="240" alt="">
-    <p class="accionesUsuario"><a href="carrito.php?idproducto=<?php echo $productoDetalles['idproducto'];?>">Comprar</a> </p>
-  </li>
+    <div class="card margen"  >
+                      <img src="<?php echo $productoDetalles['Imagen'] ?>" width="210" height="240" alt="">
+                          <div class="card-body text-center">
+                              <h5 class="card-title"><?php echo $productoDetalles ['Titulo']?></h5>
+                                  <p class="card-text"><strong><?php echo "Precio: $". $productoDetalles['Precio'] ?></strong></p>
+                                  <a href="carrito.php?idproducto=<?php echo $productoDetalles['idproducto'];?>" class="btn btn-primary mb-3">Comprar</a>
+                          </div>
+                  </div>
   <?php } while($productoDetalles = mysqli_fetch_assoc($resQueryProducto)); ?>
 </ul>
 
