@@ -14,5 +14,13 @@ Busqueda: <input type="text" name="sample_search" id="sample_search" onkeyup="bu
 
 
 
-<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="js\jquery.min.js"></script>
 <script type="text/javascript" consulta = <?php echo $_POST['consulta'];  ?>src="../js/main.js"></script>
+<script>
+    $(document).on("click", ".open-AddBookDialog", function () {
+  var myBookId = $(this).data('id');
+  $(".modal-body #bookId").val( myBookId );
+  
+
+});
+</script>

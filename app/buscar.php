@@ -43,8 +43,8 @@ if ($resultado->num_rows>0) {
                         <td>".$fila['Correo']."</td>
                         <td>".$fila['Contraseña']."</td>
                         <td>".$fila['Direccion']."</td>
-                        <td><a href='borrarUsuario.php?id=".$fila['idUsuario']."'>Borrar &nbsp;</a>
-                        <td><button type=button id=".$fila['idUsuario']." class=btn btn-primary data-toggle=modal data-target=#exampleModal>                    
+                        <td><a class=btn btn-primary href='borrarUsuario.php?id=".$fila['idUsuario']."'>Borrar &nbsp;</a>
+                        <td><button title='Add this item' type=button data-id=".$fila['idUsuario']." href=#addBookDialog class='open-AddBookDialog btn btn-primary' data-toggle=modal >                    
                         Editar
                       </button></
                         </td>
