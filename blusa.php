@@ -1,3 +1,32 @@
+<?php
+
+$categoria=$_GET['categoria'];
+
+
+
+include("conn/connLocalhost.php");
+include("includes/utils.php");
+
+// Obtenemos los datos de los usuarios de la BD
+$queryGetUsers = "SELECT idproducto, Imagen, Titulo, Precio, Categoria, Stock FROM producto WHERE Categoria =".$categoria;
+
+// Ejecutamos el query
+$resQueryGetUsers = mysqli_query($connLocalhost, $queryGetUsers) or trigger_error("There was an error getting the user data... please try again");
+
+// Contamos el número de resultados obtenidos
+$totalUsers = mysqli_num_rows($resQueryGetUsers);
+
+// Hacemos fetch del primer resultado
+$userDetails = mysqli_fetch_assoc($resQueryGetUsers);
+
+
+
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,14 +101,31 @@
     </div><!-- end page-title -->
         
 
+
+
+
+<div class="card-deck">
+            <div class="card ">
+            <?php do { ?>
+                <img src="<?php echo $userDetails['Imagen'] ?>"  class="card-img-top img-fluid" alt="Modelo en blusa blanca">
+                <div class="card-body text-center">
+                    <h5 class="card-title"><?php echo $userDetails['Titulo']?></h5>
+                  
+                     <a href="carrito.php?idproducto=<?php echo $userDetails['idproducto'];?> class="btn btn-primary mb-3">Vista rapida</a>
+                     <?php } while($userDetails = mysqli_fetch_assoc($resQueryGetUsers)); ?>
+                </div>
+             </div>
+    <?php echo  $categoria; ?>
     <section class="container mb-5 pt-5">
         <div class="card-deck">
             <div class="card ">
-                <img src="images/blusa_blanca01.jpg" class="card-img-top img-fluid" alt="Modelo en blusa blanca">
+            <?php do { ?>
+                <img src="<?php echo $userDetails['Imagen'] ?>"  class="card-img-top img-fluid" alt="Modelo en blusa blanca">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Blusa blanca</h5>
-                     <p class="card-text ">Blusa comoda de todos los tamaños.<br><strong>$399</strong></p>
-                     <a href="#" class="btn btn-primary mb-3">Vista rapida</a>
+                    <h5 class="card-title"><?php echo $userDetails['Titulo']?></h5>
+                  
+                     <a href="carrito.php?idproducto=<?php echo $userDetails['idproducto'];?> class="btn btn-primary mb-3">Vista rapida</a>
+                     <?php } while($userDetails = mysqli_fetch_assoc($resQueryGetUsers)); ?>
                 </div>
              </div>
 

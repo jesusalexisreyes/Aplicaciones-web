@@ -119,7 +119,6 @@ $idproducto=$_GET['idproducto'];
    <!--- Fin de la tabla --->
 
 
-           
         
             <div class = "clearfix ">
                 
@@ -129,7 +128,7 @@ $idproducto=$_GET['idproducto'];
                                     <h3>Total a pagar:</h3>
                                     <h4>$2323</h4>
                                     <form class="form-inline" method="post">
-                                        <input type="submit" value="Pagar" class="btn btn-default btn-block" />
+                                        <button type="submit" value="Pagar" class="btn btn-default btn-block" />Pagar</btn>
                                     </form>
                                 </div><!-- end newsletter -->
        </div>

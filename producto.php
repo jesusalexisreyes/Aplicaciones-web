@@ -99,22 +99,22 @@ $userDetails = mysqli_fetch_assoc($resQueryGetUsers);
             </div><!-- end container -->
         </div><!-- end page-title -->
 
-        <section class="section lb">
+        <section class="section">
 
             <div class="container">
                 <div class="row">
 
-<?php echo  $categoria; ?>
 
-<ul class="listadoUsuarios">
   <?php do { ?>
-  <li>
-    <p class="nombreUsuario"><?php echo $userDetails['Titulo'].' $'.$userDetails['Precio'] ?></p>
-    <img src="<?php echo $userDetails['Imagen'] ?>" width="210" height="240" alt="">
-    <p class="accionesUsuario"><a href="carrito.php?idproducto=<?php echo $userDetails['idproducto'];?>">Comprar</a> </p>
-  </li>
+  <div class="card margen"  >                   
+                    <img src="<?php echo $userDetails['Imagen'] ?>" width="210" height="240" alt="">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><?php echo $userDetails ['Titulo']?></h5>
+                                <p class="card-text"><strong><?php echo "Precio: $". $userDetails['Precio'] ?></strong></p>
+                                <a href="carrito.php?idproducto=<?php echo $userDetails['idproducto'];?>" class="btn btn-primary mb-3">Comprar</a>
+                        </div>
+                </div>
   <?php } while($userDetails = mysqli_fetch_assoc($resQueryGetUsers)); ?>
-</ul>
 
 
                 </div><!-- end row -->
@@ -136,3 +136,5 @@ $userDetails = mysqli_fetch_assoc($resQueryGetUsers);
     <script src="js/custom.js"></script>
 
 </body>
+
+</html>

@@ -7,6 +7,22 @@
 
 **************************************/
 
+
+
+.texto{
+    word-break: break-all;
+}
+
+.orden{
+    width: 250px;
+    display: flex;
+    align-items: center;
+}
+
+.borde {
+    background-color: #333333;
+}
+
 body {
     font-size: 15px;
     line-height: 26px;

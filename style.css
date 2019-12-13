@@ -136,12 +136,14 @@ a {
 }
 
 
-<<<<<<< HEAD
 /* HEADER
-=======
-/* HEADER
->>>>>>> 99da70443d804f48b259b9ebd54a625baae4a1f6
 **************************************/
+
+
+.texto{
+    word-break: break-all;
+}
+
 
 .header {
     padding: 0.4rem 0;
