@@ -206,7 +206,7 @@ if (isset($_POST['sent'])) {
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="marketing-contact.html">Compras Realizadas</a>
+                                <a class="nav-link" href="comprasrealizadas.php">Compras Realizadas</a>
                             </li>
                         </ul>
                         <form class="form-inline" style=" position: absolute; top: 33px; left: 1298px;">
