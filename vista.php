@@ -1,7 +1,7 @@
 <?php
 
 $idproducto=1;
-$idproductof=1;
+
 
 
 
