@@ -113,7 +113,7 @@ function eliminar()
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="index_usr.php">Usuarios</a>
+                                <a class="nav-link" href="index_admin.php">Usuarios</a>
                             </li>
                         </ul>
                         <form class="form-inline" style=" position: absolute; top: 33px; left: 1298px;">
