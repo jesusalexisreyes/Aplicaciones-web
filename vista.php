@@ -8,13 +8,29 @@ if(!isset($_SESSION)) {
   //session_destroy();
 }
 
-
 $idProducto=$_GET['idproducto'];
 $idusuario=$_SESSION['usuarioId'];
 
 
 include("conn/connLocalhost.php");
 include("includes/utils.php");
+
+// Obtenemos los datos de los usuarios de la BD COMENS
+$queryGetcomens = "SELECT u.Nombre, c.descripcion, c.valoracion
+FROM comentario c
+INNER JOIN usuario u 
+on c.idUsuario = u.idusuario
+order by u.nombre";
+
+// Ejecutamos el query
+$resQuerycomens = mysqli_query($connLocalhost, $queryGetcomens) or trigger_error("There was an error getting the user data... please try again");
+
+// Contamos el número de resultados obtenidos
+$totalcomens = mysqli_num_rows($resQuerycomens);
+
+// Hacemos fetch del primer resultado
+$comensdetalles = mysqli_fetch_assoc($resQuerycomens);
+
 
 // Obtenemos los datos de los usuarios de la BD
 $query_producto = "SELECT idproducto, Imagen, Titulo, Descripcion, Precio, Categoria, Stock FROM producto WHERE idproducto =".$idProducto;
@@ -49,7 +65,7 @@ if(!isset($error)) {
       if($resQueryVentas) {
 
 
-
+        
 
 
       }
@@ -91,25 +107,24 @@ if(!isset($error)) {
 }
 
 
-//if(isset($_POST['enviar'])) {
+if(isset($_GET['enviar'])) {
 
-//if(!isset($error)) {
 
-//$queryComentario = sprintf("INSERT INTO comentario (  idUsuario, idproducto, descripcion, valoracion, fecha) VALUES ( '%s', '%s','%s', '%s','%s')",
+$queryComentario = sprintf("INSERT INTO comentario (idUsuario, idproducto, descripcion, valoracion, fecha) VALUES ( '%s', '%s','%s', '%s','%s')",
 
-  // mysqli_real_escape_string($connLocalhost,trim($_SESSION['usuarioId'])),
-//    mysqli_real_escape_string($connLocalhost,trim($_POST['descripcion'])),
-//     mysqli_real_escape_string($connLocalhost,trim($_POST['valoracion']),
-//
-//    mysqli_real_escape_string($connLocalhost,trim(date('d-m-Y H:i:s')))
-//
-//
-// );
-//     $resQueryComentario = mysqli_query($connLocalhost, $queryComentario) or trigger_error("Error en el registro :()");
-//
-//     if($resQueryComentario) {
-//
-//
+   mysqli_real_escape_string($connLocalhost,trim($_SESSION['usuarioId'])),
+   mysqli_real_escape_string($connLocalhost,trim($_GET['idproducto'])),
+    mysqli_real_escape_string($connLocalhost,trim($_GET['comentario'])),
+     mysqli_real_escape_string($connLocalhost,trim($_GET['count'])),
+    mysqli_real_escape_string($connLocalhost,trim(date('Y-m-d')))
+  );
+
+echo $queryComentario;
+    $resQueryComentario = mysqli_query($connLocalhost, $queryComentario) or trigger_error("Error en el registro :()");
+
+    if($resQueryComentario) {
+      header("Location: vista.php?idproducto=".$idProducto);
+
  }
 }
 
@@ -217,7 +232,6 @@ if(!isset($error)) {
           </nav>
       </div><!-- end container-fluid -->
       </header>
-
 
         <div class="page-title db" style="margin-top: auto;">
             <div class="container">
@@ -334,21 +348,35 @@ if(!isset($error)) {
 
 <br>
 <br>
+
+
      <div>
 
                         <div class="col-lg-12">
                             <form class="form-wrapper margen">
                                 <h4>Comentarios</h4>
-                                <form class="" action="index.html" method="post">
+                                <div class="container">
 
-
+    
+                                <form class="asd" action="index.html" method="post">
+                 <input hidden name="idproducto" value="<?php echo $idProducto ?>" type="text" class="form-control" placeholder="Titulo del comentario (opcional)">
+                 <input type="text" name="count" class="form-control" placeholder="1-10">
                                 <input type="text" class="form-control" placeholder="Titulo del comentario (opcional)">
-                                <textarea class="form-control" placeholder="Comentario"></textarea>
-                                <input type="button" name:"enviar" class="btn btn-primary mb-5" value="Comentar"/>
+                                <textarea name="comentario"class="form-control" placeholder="Comentario"></textarea>
+                                <input type="submit" name="enviar" class="btn btn-primary mb-5" value="Comentar"/>
                             </form>
+                            
                         </div>
                     </div>
-
+                    <?php do { ?>
+    <div class="card margen"  >                    
+                          <div class="card-body text-center">
+                              <h5 class="card-title">Nombre del usuario: <?php echo $comensdetalles ['Nombre']?></h5>
+                                  <p class="card-text text-left"><strong><?php echo "Comentario: <br/>". $comensdetalles['descripcion'] ?></strong></p>
+                                  <p class="card-text text-left"><strong><?php echo "valoracion: <br/>". $comensdetalles['valoracion'] ?></strong></p>
+                          </div>
+                  </div>
+  <?php } while($comensdetalles = mysqli_fetch_assoc($resQuerycomens)); ?>
 
 
 
